@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Water Bottles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background: rgba(0,0,0,0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        nav a:hover { color: #ffdd00; }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            animation: gradientShift 10s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background: linear-gradient(135deg, #ff512f, #dd2476); }
+            50% { background: linear-gradient(135deg, #1fa2ff, #12d8fa); }
+            100% { background: linear-gradient(135deg, #ff512f, #dd2476); }
+        }
+        header h1 { font-size: 3em; margin-bottom: 20px; }
+        header p { font-size: 1.2em; margin-bottom: 30px; }
+        .btn {
+            padding: 15px 30px;
+            background: #ffdd00;
+            color: #333;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .btn:hover { transform: scale(1.1); }
+
+        section {
+            min-height: 100vh;
+            padding: 100px 50px 50px;
+        }
+        .section1 { background: #1e1e2f; }
+        .section2 { background: #0f3460; }
+        .section3 { background: #162447; }
+
+        h2 { font-size: 2.5em; margin-bottom: 20px; }
+        p { font-size: 1.1em; line-height: 1.8; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #0b1e3d;
+        }
+
+        /* Animation on scroll */
+        .fadeIn {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        .fadeIn.show { opacity: 1; transform: translateY(0); }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><strong>WaterBottles</strong></div>
+        <div>
+            <a href="#section1">About</a>
+            <a href="#section2">Products</a>
+            <a href="#section3">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Custom Water Bottles</h1>
+        <p>Make your hydration stylish! Unique colors & designs, just for you.</p>
+        <button class="btn">Explore Now</button>
+    </header>
+
+    <section id="section1" class="section1 fadeIn">
+        <h2>About Us</h2>
+        <p>We create premium, customizable water bottles that reflect your style and personality. Every bottle is crafted with love, care, and attention to detail.</p>
+    </section>
+
+    <section id="section2" class="section2 fadeIn">
+        <h2>Our Products</h2>
+        <p>Choose from a variety of colors, sizes, and materials. Whether you need a bottle for gym, travel, or office, we have it all. Customize it your way!</p>
+    </section>
+
+    <section id="section3" class="section3 fadeIn">
+        <h2>Contact Us</h2>
+        <p>Email:hydropluse2@gmail.com | Phone: +91 7353308435</p>
+        <p>Follow us on social media for latest designs and offers.</p>
+    </section>
+
+    <footer>
+        &copy; 2026 WaterBottles. All rights reserved.
+    </footer>
+
+    <script>
+        // Fade-in on scroll
+        const faders = document.querySelectorAll('.fadeIn');
+        window.addEventListener('scroll', () => {
+            faders.forEach(fader => {
+                const rect = fader.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 100) {
+                    fader.classList.add('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
